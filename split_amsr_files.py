@@ -99,11 +99,11 @@ def main():
         return
 
     # Находим все NPZ файлы
-    npz_files = list(DATA_DIR.glob("AMSR2_temp_only_*.npz"))
+    npz_files = list(DATA_DIR.glob("AMSR2_temp_only_20200101_000000_to_20210101_000000.npz"))
 
     if not npz_files:
         print("NPZ файлы не найдены в указанной папке!")
-        print("Убедитесь, что файлы имеют формат: AMSR2_temp_only_*.npz")
+        print("Убедитесь, что файлы имеют формат: AMSR2_temp_only_20200101_000000_to_20210101_000000.npz")
         return
 
     print(f"Найдено файлов для разделения: {len(npz_files)}")
