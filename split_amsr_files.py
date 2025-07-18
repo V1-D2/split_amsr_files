@@ -9,7 +9,8 @@ import os
 from tqdm import tqdm
 
 # ПУТЬ К ПАПКЕ С ФАЙЛАМИ - ИЗМЕНИТЕ ПРИ НЕОБХОДИМОСТИ
-DATA_DIR = pathlib.Path("/home/vdidur/temperature_sr_project/data")
+DATA_DIR = pathlib.Path("/data/users/vdidur/data")
+NEW_DATA_DIR = DATA_DIR / "/data/users/vdidur/data/new_data"
 
 # Размер каждой части (количество точек)
 CHUNK_SIZE = 1000
@@ -52,7 +53,8 @@ def split_npz_file(file_path: pathlib.Path, chunk_size: int = CHUNK_SIZE):
 
             # Создаем имя нового файла
             chunk_name = f"{base_name}_part_{i + 1}of{num_chunks}.npz"
-            chunk_path = file_path.parent / chunk_name
+            NEW_DATA_DIR.mkdir(exist_ok=True)
+            chunk_path = NEW_DATA_DIR / chunk_name
 
             # Сохраняем
             save_dict = {
@@ -99,7 +101,7 @@ def main():
         return
 
     # Находим все NPZ файлы
-    npz_files = list(DATA_DIR.glob("AMSR2_temp_only_20200101_000000_to_20210101_000000.npz"))
+    npz_files = list(DATA_DIR.glob("*.npz"))
 
     if not npz_files:
         print("NPZ файлы не найдены в указанной папке!")
