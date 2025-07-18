@@ -13,7 +13,7 @@ DATA_DIR = pathlib.Path("/data/users/vdidur/data/new_data")
 NEW_DATA_DIR = DATA_DIR / "/data/users/vdidur/data/new_data/500_split"
 
 # Размер каждой части (количество точек)
-CHUNK_SIZE = 1000
+CHUNK_SIZE = 500
 
 
 def split_npz_file(file_path: pathlib.Path, chunk_size: int = CHUNK_SIZE):
