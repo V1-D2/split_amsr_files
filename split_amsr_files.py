@@ -9,8 +9,8 @@ import os
 from tqdm import tqdm
 
 # ПУТЬ К ПАПКЕ С ФАЙЛАМИ - ИЗМЕНИТЕ ПРИ НЕОБХОДИМОСТИ
-DATA_DIR = pathlib.Path("/data/users/vdidur/data")
-NEW_DATA_DIR = DATA_DIR / "/data/users/vdidur/data/new_data"
+DATA_DIR = pathlib.Path("/data/users/vdidur/data/new_data")
+NEW_DATA_DIR = DATA_DIR / "/data/users/vdidur/data/new_data/500_split"
 
 # Размер каждой части (количество точек)
 CHUNK_SIZE = 1000
